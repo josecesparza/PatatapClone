@@ -171,7 +171,15 @@
 		};
 
 		var circles = [];
-	
+
+		var text = new PointText({
+    		point: [((view.size.width) / 2, (view.size.height) / 2)], //Point in the middle of the canvas
+    		content: 'Press key between A and Z',
+			fillColor: 'white',
+			font
+    		fontSize: 25
+		});
+
 		function onKeyDown(event) {
 			if(keyData[event.key]){
 			var maxPoint = new Point(view.size.width, view.size.height);
@@ -193,7 +201,7 @@
 				if(circles[i].area < 1){
 					circles[i].remove(); // remove the circle from the canvas
 					circles.splice(i, 1); // remove the circle from the array
-				}
+				} 
 			}		
 		}
 	</script>
